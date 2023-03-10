@@ -1,8 +1,8 @@
 :root {
-  --primary-color: #816C7D;
+  --primary-color: #816c7d;
   --secondary-color: #2c3e50;
-  --accent-color: #47557A;
-  --background-color: #EDF0ED;
+  --accent-color: #47557a;
+  --background-color: #edf0ed;
 }
 
 body {
@@ -15,7 +15,7 @@ body {
   align-items: center;
   background-color: var(--secondary-color);
   color: var(--background-color);
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .App {
@@ -31,7 +31,6 @@ body {
   border-radius: 10px;
   background-color: var(--background-color);
 }
-
 
 h1 {
   font-size: 36px;
@@ -69,7 +68,7 @@ textarea {
   color: var(--secondary-color);
 }
 
-button[type='submit'] {
+button[type="submit"] {
   background-color: var(--accent-color);
   color: var(--background-color);
   padding: 10px 20px;
@@ -80,12 +79,27 @@ button[type='submit'] {
   transition: all 0.3s ease;
 }
 
-button[type='submit']:hover {
-  background-color: #9EAAC8;
+button[type="submit"]:hover {
+  background-color: #9eaac8;
 }
 
 div {
   margin-top: 20px;
   text-align: center;
   font-size: 24px;
+}
+
+@media screen and (min-width: 480px) {
+
+  .App {
+    max-width: 600px;
+    padding: 40px;
+    background-color: #f2f2f2;
+  }
+}
+
+.joke-response {
+  color: var(--secondary-color);
+  max-width: inherit;
+  max-height: fit-content;
 }

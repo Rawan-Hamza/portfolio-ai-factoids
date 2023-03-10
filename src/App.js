@@ -20,8 +20,11 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Gary Delaney One liners</h1>
-      <p>are you feeling down? need a quick joke from Delaney? see if he can make you smile!  </p>
+      <h1>Gary Delaney AI Jokes</h1>
+      <p>
+        are you feeling down? need a quick joke from Delaney? see if he can make
+        you smile!{" "}
+      </p>
       <form onSubmit={handleSubmit}>
         <textarea
           value={message}
@@ -30,7 +33,11 @@ function App() {
         ></textarea>
         <button type="submit">Submit</button>
       </form>
-      {response && <div><b>Gary:</b> {response}</div>}
+      {response && (
+        <div className="joke-response">
+          <b>Gary:</b> {response}
+        </div>
+      )}
     </div>
   );
 }
