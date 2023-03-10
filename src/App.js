@@ -21,11 +21,11 @@ function App() {
   return (
     <div className="App">
       <h1>Gary Delaney One liners</h1>
-      <p>are you feeling down? need a quick joke from Delaney? ask for one and see if he can make you smile!  </p>
+      <p>are you feeling down? need a quick joke from Delaney? see if he can make you smile!  </p>
       <form onSubmit={handleSubmit}>
         <textarea
           value={message}
-          placeholder="Ask gary to tell you a joke"
+          placeholder="Ask gary for a joke"
           onChange={(e) => setMessage(e.target.value)}
         ></textarea>
         <button type="submit">Submit</button>
