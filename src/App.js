@@ -18,12 +18,13 @@ function App() {
       .then((data) => setResponse(data.message));
   };
 
+  
   return (
     <div className="App">
-      <h1>Gary Delaney AI Jokes</h1>
+      <h1>Gary's AI Jokes</h1>
       <p>
-        are you feeling down? need a quick joke from Delaney? see if he can make
-        you smile!{" "}
+        feeling down? How about a quick joke from Gary Delaney? see if he can make
+        you smile!
       </p>
       <form onSubmit={handleSubmit}>
         <textarea
