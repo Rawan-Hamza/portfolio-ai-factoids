@@ -4,9 +4,12 @@ import "./App.css";
 function App() {
   const [message, setMessage] = useState("");
   const [response, setResponse] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true);
+    setResponse("");
     fetch("http://localhost:3001/", {
       method: "POST",
       headers: {
@@ -15,27 +18,33 @@ function App() {
       body: JSON.stringify({ message }),
     })
       .then((res) => res.json())
-      .then((data) => setResponse(data.message));
+      .then((data) => {
+        setResponse(data.message);
+        setLoading(false);
+      })
+      .catch((err) => console.log(err));
   };
 
-  
   return (
     <div className="App">
-      <h1>Gary's AI Jokes</h1>
-      <p>
-        feeling down? How about a quick joke from Gary Delaney? see if he can make
-        you smile!
-      </p>
+      <h1>Gary's AI Factoids</h1>
+      <p>Feeling bored? gary can teach you something!</p>
       <form onSubmit={handleSubmit}>
         <textarea
           value={message}
-          placeholder="Ask gary for a joke"
+          placeholder="e.g. can you tell me something about cats?"
           onChange={(e) => setMessage(e.target.value)}
         ></textarea>
-        <button type="submit">Submit</button>
+        <button type="submit">Teach me</button>
       </form>
-      {response && (
-        <div className="joke-response">
+      {loading && (
+        <p className="response">
+          {" "}
+          <b>Thinking...</b>{" "}
+        </p>
+      )}
+      {!loading && response && (
+        <div className="response">
           <b>Gary:</b> {response}
         </div>
       )}
