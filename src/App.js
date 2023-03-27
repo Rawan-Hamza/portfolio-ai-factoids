@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+const port = process.env.PORT || 3001;
 
 function App() {
   const [message, setMessage] = useState("");
@@ -10,7 +11,7 @@ function App() {
     e.preventDefault();
     setLoading(true);
     setResponse("");
-    fetch("http://localhost:3001/", {
+    fetch(`http://localhost:${port}/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
